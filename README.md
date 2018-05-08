@@ -53,14 +53,27 @@ One of the main data that the betting houses use to calculate the probability of
 The necessary data will never be sufficient since there are other factors that, as small as they may be, can completely alter the outcome of a football match. However, the approach that is being given to the information used is, to some extent, good in order to achieve a justified inference.
 
 ### Consistency
-matches other data
+As I tried to make the data the more consistent with the real data, I can not guarantee a high level of this, especially in the information obtained through Twitter, since the sentiment analysis was not very robust and may not reflect 100% the real opinion of the user.
+
 ### Uniformity
-same units
+The uniformity of the data exists, since the same algorithm is applied under the same measures to the teams that integrate the play offs.
 
 ## Database Used
-MongoDB
+MongoDB is a free and open source and **document oriented** database. I used it because it uses JSON files to save the information and this format is what the system receives when doing the data mining. It also has the advantages of being a non-relational database, such as being able to access the values of some attributes faster when there are large amounts of data.
+
+## Criteria Used
+To determine the odds of the teams to win the championship a number of variables were used. The next algorithm was used:
+
+[(19 - `position at league`) + `games won` + `goal difference` + (`Games won in the last 5 played` * 10)] * [(`percentage of positive tweets` * 0.1) + 1]
 
 ## Data Visualization
+To display the prediction result, I create a simple interface using elements from the [Bootstrap Material Design Library](https://mdbootstrap.com/material-design-for-bootstrap/). The first thing the user can see, is the question that this project is made about and then a colorful graph of the teams. The percentages used in this graph are obtained from the scores that the algorithm assigned to each computer and are stored as a separate attribute.  
+![index section](img/index.png)
+
+There is also a section of tweets where the most relevant of the official hashtag of the competition are shown.  
+![index section](img/tweets-section.png)
+
+You can see the outcome of [ligamx-forecaster](http://bit.ly/ligamx-forecaster) hosted with github pages. This version does not have a backend connection, and the data used is from the sample extracted on May 2nd, 2018.
 
 ## DIKW Pyramid
 
