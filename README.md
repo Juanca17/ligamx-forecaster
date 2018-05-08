@@ -10,7 +10,7 @@ This project seeks to solve a simple question, who will be the winning the liga 
 What I'm looking for in this project is to make a prediction that uses historical data about the teams in the playoff and complement it with the positive or negative opinions on tweets of a selected group of sports analysts.
 
 ## System Architecture
-The data flows in the system as follows:
+The data flows in the system as follows:  
 ![data-flowchart](img/data-flow.png)
 
 The numbers correspond to the chronological order in which the processes are developed. In the case of the two sources of data mining, this could be done in parallel.
@@ -31,13 +31,34 @@ It took me 3 steps to gather the information.
     - Last games streak.
 
 ### Sport Experts Tweets
+To mine the data on Twitter, I used the Python library [Tweepy](http://www.tweepy.org/) which allows you to pull up to 200 tweets per user.  
+The information extracted was:
+- The tweet id
+- The creation date
+- Username
+- The full tweet text
+
+As each tweet was pulled before it gets a JSON format, the full_text attribute is cleaned, by removing unnecessary jump spaces and by replacing `" "` with `''` to avoid some format conflicts.
 
 ## Tangible Data
+The combination of two types of data sources makes inference and prediction more robust. Our tangible data are nothing more than variables that serve to measure the success or failure of the football teams to examine.
+
 ### Validity
+This data does belong to the same scheme of the search, since it is information that directly affects the objects that we examine.
+
 ### Accuracy
+One of the main data that the betting houses use to calculate the probability of victory or defeat of a sporting event are the historical statistics of the teams involved. This method is used in the algorithm of this program, with the singularity that the opinions of expert analysts are also taken into account.
+
 ### Completeness
+The necessary data will never be sufficient since there are other factors that, as small as they may be, can completely alter the outcome of a football match. However, the approach that is being given to the information used is, to some extent, good in order to achieve a justified inference.
+
 ### Consistency
+matches other data
 ### Uniformity
+same units
+
+## Database Used
+MongoDB
 
 ## Data Visualization
 
@@ -47,9 +68,9 @@ It took me 3 steps to gather the information.
 
 ## Constraints
 
-## Run this Project
+## Future Improvements
 
-## Folder Path
+## Run this Project
 
 ## Built With
 - MongoDB
