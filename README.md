@@ -25,10 +25,10 @@ It took me 3 steps to gather the information.
 1. To search the roundId so I can query the right information from the API.
 2. Pull a JSON from the API that has relevant information of the teams from the league.
 3. Insert information to the database including the follow attributes:  
-  - Table position
-  - Games played, wins, lost, and draws.
-  - Goals in favor and against.
-  - Last games streak.
+    - Table position
+    - Games played, wins, lost, and draws.
+    - Goals in favor and against.
+    - Last games streak.
 
 ### Sport Experts Tweets
 
