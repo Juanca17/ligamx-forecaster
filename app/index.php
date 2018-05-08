@@ -230,29 +230,14 @@
   </script>
 
   <script>
-  <?php
-  require 'vendor/autoload.php';
-  $client = new MongoDB\Client("mongodb://localhost:27017");
-  $collection = $client->ligamx->equipos;
-
-  $query = array('pos' => array( '$lte' => 8 ));
-  $result = $collection->find($query);
-  $teams = array();
-  $teams_perc = array();
-  $i = 0;
-  foreach ($result as $entry) {
-    $teams[$i] = $entry['nombre'];
-    $teams_perc[$i] = $entry['porcentaje'];
-    $i++;
-  }
-  echo "var ctx = document.getElementById(\"mainChart\").getContext('2d');
+  var ctx = document.getElementById("mainChart").getContext('2d');
   var mainChart = new Chart(ctx, {
   type: 'bar',
   data: {
-      labels: [\"".$teams[0]."\", \"".$teams[1]."\", \"".$teams[2]."\", \"".$teams[3]."\", \"".$teams[4]."\", \"".$teams[5]."\", \"".$teams[6]."\", \"".$teams[7]."\"],
+      labels: ['Toluca', 'América', 'Monterrey', 'Santos', 'Tigres', 'Tijuana', 'Pumas', 'Morelia'],
       datasets: [{
           label: 'Porcentaje',
-          data: [".$teams_perc[0].", ".$teams_perc[1].", ".$teams_perc[2].", ".$teams_perc[3].", ".$teams_perc[4].", ".$teams_perc[5].", ".$teams_perc[6].", ".$teams_perc[7]."],
+          data: [22, 14.88, 17.36, 11.85, 10.47, 15.88, 4.18, 4.29],
           backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(255, 206, 86, 0.2)',
@@ -285,8 +270,7 @@
           }]
       }
   }
-  });"
-  ?>
+  });
   </script>
 
 </body>
