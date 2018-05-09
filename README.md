@@ -82,7 +82,6 @@ This project only works for the **Liga MX - Torneo Clausura 2018**. It only work
 This project definitely has several opportunities for improvement. More historical data could be mined to improve prediction and the feed could be connected to automatically update at real time. It could certainly improve the sentiment analysis to better interpret the opinions of analysts.
 
 ## DIKW Pyramid
-![DIKW Pyramid](img/dikw.jpg)  
 In this project:
 - Data: They are the numbers that together create the statistics of the teams. Also the text that each tweet represents.
 
