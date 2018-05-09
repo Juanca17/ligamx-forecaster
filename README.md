@@ -5,7 +5,7 @@ Final project for TC3041 - Advanced Databases, where I try to forecast the winne
 Juan Carlos Sanchez Cruz - A01631462
 
 ## Motivation
-This project seeks to solve a simple question, who will be the winning the liga mx season 2018? In Mexico football is almost treated with political language and it is no coincidence that there are so many sports analysis programs. This sport is a round-the-media business. The live broadcasts of the matches are very expensive due to the number of people summoned. After every football game, the conversation turns to interpret the events and plays. But one of the things that draws my attention is the speculation that is created before, and that the Mexican League is very difficult to predict. Bets never fully favor one side, and there are many factors that can affect a team's performance.
+This project seeks to solve a simple question, **who will be the winning the liga mx season 2018?** In Mexico football is almost treated with political language and it is no coincidence that there are so many sports analysis programs. This sport is a round-the-media business. The live broadcasts of the matches are very expensive due to the number of people summoned. After every football game, the conversation turns to interpret the events and plays. But one of the things that draws my attention is the speculation that is created before, and that the Mexican League is very difficult to predict. Bets never fully favor one side, and there are many factors that can affect a team's performance.
 
 What I'm looking for in this project is to make a prediction that uses historical data about the teams in the playoff and complement it with the positive or negative opinions on tweets of a selected group of sports analysts.
 
@@ -64,7 +64,7 @@ MongoDB is a free and open source and **document oriented** database. I used it 
 ## Criteria Used
 To determine the odds of the teams to win the championship a number of variables were used. The next algorithm was used:
 
-[(19 - `position at league`) + `games won` + `goal difference` + (`Games won in the last 5 played` * 10)] * [(`percentage of positive tweets` * 0.1) + 1]
+[(19 - `position at league`) + `games won` + `goal difference` + (`games won in the last 5 played` * 10)] * [(`percentage of positive tweets` * 0.1) + 1]
 
 ## Data Visualization
 To display the prediction result, I create a simple interface using elements from the [Bootstrap Material Design Library](https://mdbootstrap.com/material-design-for-bootstrap/). The first thing the user can see, is the question that this project is made about and then a colorful graph of the teams. The percentages used in this graph are obtained from the scores that the algorithm assigned to each computer and are stored as a separate attribute.  
@@ -75,15 +75,35 @@ There is also a section of tweets where the most relevant of the official hashta
 
 You can see the outcome of [ligamx-forecaster](http://bit.ly/ligamx-forecaster) hosted with github pages. This version does not have a backend connection, and the data used is from the sample extracted on May 2nd, 2018.
 
-## DIKW Pyramid
-
-## Conclusions
-
 ## Constraints
+This project only works for the **Liga MX - Torneo Clausura 2018**. It only works for sports analysts that tweets in Spanish. And works with a custom version environment.
 
 ## Future Improvements
+This project definitely has several opportunities for improvement. More historical data could be mined to improve prediction and the feed could be connected to automatically update at real time. It could certainly improve the sentiment analysis to better interpret the opinions of analysts.
+
+## DIKW Pyramid
+lol
+
+## Conclusions
+With no doubt, in this project I had to use all the skills and tools seen within the course. From the approach of a system that can be solved with the information in social networks, the extraction of the data along with its filtering and later use, and the use of a database that is scalable when saving large amounts of data.
 
 ## Run this Project
+### Prerequisites
+You have to get your own keys first.  
+For the Fantasy Data API you need to register [here](https://fantasydata.com/cart/checkout.aspx) to obtained a free key. Then you need to create a file `feedKey.py` in the `data-mining/api/` folder and add the variable `api_key = '{api_key}'`.
+For the twitter API you need to register your widget [here](https://developer.twitter.com/) to get your credentials. Then you need to create a file `connection.py` in the `data-mining/tweets/` folder and add the variables:  
+```
+ckey = "{consumer_key}"
+csecret = "{consumer_secret}"
+atoken = "{access_token}"
+asecret = "{access_token_secret}"
+```
+
+### Installing
+After pulling the data, you need to put the `app` folder into a `php5 apache2` server to run the interface. You need also to install the mongodb extension for php5. For macOS 10.12, the necessary driver is php56-mongodb which I install it using `brew install php56-mongodb` or `sudo pecl install mongodb`.
+
+### Running the tests
+The data-pull can be tested using the appropriate argument in `make`.
 
 ## Built With
 - MongoDB
