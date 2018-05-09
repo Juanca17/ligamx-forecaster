@@ -82,7 +82,15 @@ This project only works for the **Liga MX - Torneo Clausura 2018**. It only work
 This project definitely has several opportunities for improvement. More historical data could be mined to improve prediction and the feed could be connected to automatically update at real time. It could certainly improve the sentiment analysis to better interpret the opinions of analysts.
 
 ## DIKW Pyramid
-lol
+![DIKW Pyramid](img/dikw.jpg)  
+In this project:
+- Data: They are the numbers that together create the statistics of the teams. Also the text that each tweet represents.
+
+- Information: It is what the data really mean and its reflection in reality. For example, if a team goes bad, this is likely to be reflected in the statistics.
+
+- Knowledge: It is the inference we make from these data, that is, the values with which we weigh the probability of success or failure of each team.
+
+- Wisdom: Are the adjustments we make to the variables to judge with better accuracy. The opinions that a sports analyst may have are due to the experience in their field.
 
 ## Conclusions
 With no doubt, in this project I had to use all the skills and tools seen within the course. From the approach of a system that can be solved with the information in social networks, the extraction of the data along with its filtering and later use, and the use of a database that is scalable when saving large amounts of data.
